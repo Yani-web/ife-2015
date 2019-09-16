@@ -1,3 +1,4 @@
 # ife-2015
-This is for ife 2015 tasks
-<img src="1.1/demo.png" width=300px>
+<p>This is for ife 2015 tasks</p>
+<h1>1.1</h1>
+<img src="1.1/demo.png" width=800px>
