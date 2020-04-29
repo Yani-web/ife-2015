@@ -1,0 +1,214 @@
+
+
+h1 {
+    color: blue;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: 'open_sansregular';
+}
+
+
+p {
+    font-size: 12px;
+    text-indent: 2em;
+    word-spacing: 2px;
+    white-space: normal;
+    line-height: 1.5;
+    font: bold;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+
+/*背景色为红色 宽度为960px 居中 方法一：巧用margin */
+div#method1 {
+    background-color: red;
+    width:960px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+/* 背景色为红色 宽度为960px 居中 方法二：弹性盒*/
+div#method2 {
+    margin-top: 50px;
+    display: flex;   
+    justify-content: center;}
+
+#c1 {
+    background-color: red;
+    width:960px;
+    height: 50px;
+}
+
+
+/*请在不使用border-radius的情况下实现一个可复用的高度和宽度都自适应的圆角矩形*/
+#box {  /*step1 设置框体长宽*/
+    width:960px;
+    height: 50px;
+    margin:50px auto; 
+} 
+.r1,.r2,.r3,.r4,.r5,.r6,.r7,.r8 {  /*step2 设置圆角像素高 用来组合*/
+    display: block;
+    height: 1px;
+    overflow: hidden;
+}
+.r1,.r8 {
+    margin: 0 5px;
+    background-color: #000;
+}
+.r2,.r7 {
+    margin: 0 3px;
+    border-left: 2px solid;
+    border-right:2px solid;
+}
+.r3,.r6 {
+    margin: 0 2px;
+    border-left: 1px solid;
+    border-right:1px solid;
+}
+.r4,.r5 {
+    margin: 0 1px;
+    border-left: 1px solid;
+    border-right:1px solid;
+}
+#box p {
+    border-right:1px solid #000; border-left:1px solid #000; 
+    overflow:hidden; margin: 0 auto;  text-align: center;
+}
+
+/*用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化*/
+.table {  /*方法一： 栅格布局*/
+    display: grid;
+    width: 80%;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 50px 50px;
+    margin-left: 50px;
+}
+.a {
+    grid-row: 1;
+    grid-column: 1;
+    background: rgb(221, 160, 160);
+}
+.b {
+    grid-row: 1;
+    grid-column: 2;
+    background: rgb(218, 125, 125);
+}
+.c {
+    grid-row: 2;
+    grid-column: 1/3;
+    background: rgb(218, 65, 65);
+}
+
+table { /*方法二：表格布局 《css权威指南》p735*/
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 80%;
+    border-collapse: collapse;
+}
+tr { 
+    height: 50px;
+}
+.d {
+    width: 100px;
+    background: rgb(221, 160, 160);
+}
+.e {
+    width:auto;
+    background: rgb(218, 125, 125);
+}
+.f {
+    background: rgb(218, 65, 65);
+}
+
+.table2 {
+    width:80%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.g {background-color:  rgb(221, 160, 160); width:100px; float: left; height: 50px;} /*方法三：float布局 */
+.h{background-color: rgb(218, 125, 125); height: 50px;}
+.i{background-color: rgb(218, 65, 65); width: 100%; height: 50px; }
+
+/*用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化*/
+.table4 { /*弹性盒*/
+    display: flex;
+    height: 50px;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.a1 {
+    width:300px;
+    flex: none;
+    background-color:  rgb(221, 160, 160);
+}
+.b1 {
+    flex: 1 1 auto;
+    background-color: rgb(218, 125, 125);
+}
+.c1 {
+    width:300px;
+    flex: none;
+    background-color: rgb(218, 65, 65);
+}
+
+.table5 { /*栅格布局*/
+    display: grid;
+    height: 50px;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    grid-template-columns: 300px auto 300px;
+}
+.a2 {
+    background-color:  rgb(221, 160, 160);
+}
+.b2 {
+    background-color: rgb(218, 125, 125);
+}
+.c2 {
+    background-color: rgb(218, 65, 65);
+}
+
+
+.table6 {
+    position: relative;
+    height: 50px;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.a3 {
+    width: 300px;
+    position: absolute; top:0; left:0; 
+    background-color:  rgb(221, 160, 160);
+}
+.b3 {
+    margin:0 300px;
+    background-color: rgb(218, 125, 125);
+}
+.c3 {
+    width: 300px;
+    position: absolute; top:0; right:0; 
+    background-color: rgb(218, 65, 65);
+}
+
+.table7 {
+    display: flex;
+    flex-flow: row wrap;
+    width:50%;
+    background-color: rgb(218, 65, 65);
+    margin: 0 auto;
+}
+.a4,.b4,.c4,.d4,.e4,.f4,.g4,.h4,.i4 {
+    width: 300px;
+    height: 50px;
+    background-color: rgb(56, 45, 206);
+    margin: 5px;
+}
